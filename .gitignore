@@ -1,0 +1,5 @@
+docs/*.pdf
+chroma_db/
+__pycache__/
+.env
+*.npy
