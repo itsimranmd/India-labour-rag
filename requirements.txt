@@ -1,0 +1,1 @@
+sentence-transformers>=3.0\nchromadb>=0.5\npymupdf>=1.24\nopenai>=1.40\nrank-bm25>=0.2.2\nrequests>=2.31\nnumpy>=1.26\n
