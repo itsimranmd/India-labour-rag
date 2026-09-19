@@ -1,0 +1,457 @@
+[
+  {
+    "q": "What notice period is required before retrenching a worker?",
+    "gold": [
+      "industrial_relations_p33_c2"
+    ],
+    "difficulty": "easy",
+    "note": "one month's notice or wages in lieu",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "How many weeks of maternity benefit is a woman entitled to?",
+    "gold": [
+      "social_security_p47_c2"
+    ],
+    "difficulty": "easy",
+    "note": "26 weeks; 12 if two+ surviving children",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "How many years of continuous service are required to qualify for gratuity?",
+    "gold": [],
+    "difficulty": "easy",
+    "note": "five years continuous service",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What is the maximum number of hours a worker may be required to work in a day?",
+    "gold": [
+      "osh_p27_c0"
+    ],
+    "difficulty": "easy",
+    "note": "eight hours per day",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "How much notice must a trade union give before going on strike?",
+    "gold": [
+      "industrial_relations_p30_c1"
+    ],
+    "difficulty": "easy",
+    "note": "60 days notice",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What compensation is payable to a worker who is laid off?",
+    "gold": [
+      "industrial_relations_p32_c3"
+    ],
+    "difficulty": "easy",
+    "note": "50% of basic wages and dearness allowance",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "How many days of continuous service qualify a worker for retrenchment compensation?",
+    "gold": [
+      "industrial_relations_p32_c2",
+      "industrial_relations_p33_c0",
+      "industrial_relations_p33_c2",
+      "industrial_relations_p33_c4",
+      "industrial_relations_p34_c2",
+      "industrial_relations_p34_c0",
+      "industrial_relations_p38_c2",
+      "industrial_relations_p39_c3"
+    ],
+    "difficulty": "easy",
+    "note": "one year continuous service",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What is the employer's contribution rate to the provident fund?",
+    "gold": [
+      "social_security_p24_c1",
+      "social_security_p24_c0"
+    ],
+    "difficulty": "easy",
+    "note": "10%, 12% for notified establishments",
+    "labelled_by": "human-verified"
+  },
+  {
+    "q": "Which authority registers a trade union?",
+    "gold": [
+      "industrial_relations_p9_c3",
+      "industrial_relations_p9_c4",
+      "industrial_relations_p11_c0",
+      "industrial_relations_p11_c1",
+      "industrial_relations_p11_c2",
+      "industrial_relations_p11_c3"
+    ],
+    "difficulty": "easy",
+    "note": "Registrar of Trade Unions",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What is the minimum number of workers required for a Safety Committee?",
+    "gold": [
+      "osh_p25_c0"
+    ],
+    "difficulty": "easy",
+    "note": "as prescribed / 500+ workers",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "At what age does superannuation apply for provident fund purposes?",
+    "gold": [
+      "social_security_p12_c1"
+    ],
+    "difficulty": "easy",
+    "note": "58 years",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "How long must an employer preserve records under the Social Security Code?",
+    "gold": [],
+    "difficulty": "unanswerable",
+    "note": "as prescribed",
+    "labelled_by": "human-verified"
+  },
+  {
+    "q": "What is the penalty for obstructing an Inspector-cum-Facilitator?",
+    "gold": [
+      "osh_p54_c2",
+      "osh_p54_c4"
+    ],
+    "difficulty": "easy",
+    "note": "fine / imprisonment as specified",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "How many representatives may a negotiating union have?",
+    "gold": [],
+    "difficulty": "easy",
+    "note": "negotiating council composition",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What is the time limit for filing an application for unpaid dues?",
+    "gold": [
+      "industrial_relations_p9_c0"
+    ],
+    "difficulty": "easy",
+    "note": "within one year",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "How much warning does a company have to give before laying people off?",
+    "gold": [
+      "industrial_relations_p33_c2",
+      "industrial_relations_p37_c2"
+    ],
+    "difficulty": "medium",
+    "note": "retrenchment notice provisions",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Can workers be stopped from forming a union?",
+    "gold": [],
+    "difficulty": "medium",
+    "note": "right to organise",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What happens to my provident fund if I change jobs?",
+    "gold": [
+      "social_security_p26_c2"
+    ],
+    "difficulty": "medium",
+    "note": "transfer of accounts",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Is an employer allowed to shut down a factory without permission?",
+    "gold": [
+      "industrial_relations_p38_c2",
+      "industrial_relations_p39_c0"
+    ],
+    "difficulty": "medium",
+    "note": "prior permission for closure",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What benefits does a worker get if injured at work?",
+    "gold": [
+      "social_security_p31_c1",
+      "social_security_p35_c0"
+    ],
+    "difficulty": "medium",
+    "note": "disablement benefit",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Who pays for the medical treatment of an insured worker?",
+    "gold": [
+      "social_security_p28_c3",
+      "social_security_p29_c0",
+      "social_security_p31_c2",
+      "social_security_p34_c3"
+    ],
+    "difficulty": "medium",
+    "note": "ESI medical benefit",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Can an employer change working conditions without telling workers?",
+    "gold": [
+      "industrial_relations_p20_c3"
+    ],
+    "difficulty": "medium",
+    "note": "notice of change required",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What rest breaks must be given during a shift?",
+    "gold": [],
+    "difficulty": "medium",
+    "note": "rest interval provisions",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Are gig workers covered by social security?",
+    "gold": [],
+    "difficulty": "medium",
+    "note": "aggregator contributions",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What protections exist for workers brought in from another state?",
+    "gold": [
+      "osh_p43_c3",
+      "osh_p43_c4",
+      "osh_p44_c0",
+      "osh_p43_c2"
+    ],
+    "difficulty": "medium",
+    "note": "ISMW entitlements",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "How is a dispute between workers and management resolved?",
+    "gold": [],
+    "difficulty": "medium",
+    "note": "conciliation officer / tribunal",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Can a worker be dismissed while a dispute is pending?",
+    "gold": [],
+    "difficulty": "medium",
+    "note": "conditions of service during proceedings",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What happens if an employer doesn't pay provident fund contributions?",
+    "gold": [
+      "social_security_p77_c0",
+      "social_security_p96_c2",
+      "social_security_p25_c0"
+    ],
+    "difficulty": "medium",
+    "note": "levy of damages / recovery",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Is overtime pay mandatory?",
+    "gold": [
+      "osh_p29_c0"
+    ],
+    "difficulty": "medium",
+    "note": "twice ordinary rate of wages",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What safety equipment must an employer provide?",
+    "gold": [
+      "osh_p82_c1",
+      "osh_p82_c0",
+      "osh_p83_c3",
+      "osh_p81_c0"
+    ],
+    "difficulty": "medium",
+    "note": "employer safety duties",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Can women be employed on night shifts?",
+    "gold": [
+      "osh_p39_c2",
+      "osh_p39_c3"
+    ],
+    "difficulty": "medium",
+    "note": "with consent, subject to safeguards",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "How much annual leave is a worker entitled to?",
+    "gold": [
+      "osh_p30_c0"
+    ],
+    "difficulty": "medium",
+    "note": "one day per 20 days worked",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What happens to unused leave when someone quits?",
+    "gold": [
+      "osh_p28_c1",
+      "osh_p30_c1",
+      "osh_p30_c2"
+    ],
+    "difficulty": "medium",
+    "note": "encashment of leave",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Who is responsible for the safety of contract workers?",
+    "gold": [],
+    "difficulty": "medium",
+    "note": "principal employer liability",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What is a lock-out and when is it illegal?",
+    "gold": [
+      "industrial_relations_p31_c1",
+      "industrial_relations_p31_c2",
+      "industrial_relations_p41_c3",
+      "industrial_relations_p41_c4",
+      "industrial_relations_p45_c1"
+    ],
+    "difficulty": "medium",
+    "note": "illegal lock-out conditions",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Money I get when I leave after many years of service",
+    "gold": [],
+    "difficulty": "hard",
+    "note": "gratuity",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Is my employer allowed to make me work late into the night?",
+    "gold": [
+      "osh_p29_c1"
+    ],
+    "difficulty": "hard",
+    "note": "overtime with consent",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Can my boss fire me without any warning at all?",
+    "gold": [
+      "industrial_relations_p33_c2"
+    ],
+    "difficulty": "hard",
+    "note": "notice or pay in lieu",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What do I get if I get hurt on the job and can't work anymore?",
+    "gold": [
+      "social_security_p31_c1"
+    ],
+    "difficulty": "hard",
+    "note": "permanent disablement benefit",
+    "labelled_by": "human-verified"
+  },
+  {
+    "q": "Does my company have to give me time off after having a baby?",
+    "gold": [],
+    "difficulty": "hard",
+    "note": "maternity leave",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What if the factory closes down and I lose my job?",
+    "gold": [
+      "industrial_relations_p34_c2",
+      "industrial_relations_p34_c0",
+      "industrial_relations_p35_c0",
+      "industrial_relations_p39_c1"
+    ],
+    "difficulty": "hard",
+    "note": "closure compensation",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Can I get my pension money before I retire?",
+    "gold": [],
+    "difficulty": "hard",
+    "note": "pension withdrawal conditions",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "My company hired me through an agency \u2014 am I still protected?",
+    "gold": [
+      "osh_p42_c1",
+      "osh_p42_c4"
+    ],
+    "difficulty": "hard",
+    "note": "contract labour provisions",
+    "labelled_by": "human-verified"
+  },
+  {
+    "q": "What if I die at work \u2014 does my family get anything?",
+    "gold": [],
+    "difficulty": "hard",
+    "note": "dependants' benefit",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "Am I allowed to refuse dangerous work?",
+    "gold": [
+      "osh_p52_c0",
+      "osh_p52_c1",
+      "osh_p35_c3"
+    ],
+    "difficulty": "hard",
+    "note": "right to remove from danger",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What is the GST rate on consulting services?",
+    "gold": [],
+    "difficulty": "unanswerable",
+    "note": "not in corpus",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What is the current national minimum wage in rupees?",
+    "gold": [],
+    "difficulty": "unanswerable",
+    "note": "Code on Wages",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What is the income tax exemption limit for salaried employees?",
+    "gold": [],
+    "difficulty": "unanswerable",
+    "note": "not in corpus",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "How much annual bonus must an employer pay?",
+    "gold": [],
+    "difficulty": "unanswerable",
+    "note": "Code on Wages",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  },
+  {
+    "q": "What are the rules for foreign direct investment in manufacturing?",
+    "gold": [],
+    "difficulty": "unanswerable",
+    "note": "not in corpus",
+    "labelled_by": "gpt-4o-mini + keyword pool"
+  }
+]
