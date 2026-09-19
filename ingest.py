@@ -1,6 +1,6 @@
 """Download the Indian labour codes and split them into retrievable passages."""
 import os, re, json, requests, urllib3
-import fitz
+import pymupdf as fitz
 
 urllib3.disable_warnings()
 
