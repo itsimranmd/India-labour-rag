@@ -1,6 +1,6 @@
-# ⚖️ India Labour Law RAG
+# India Labour Law RAG
 
-**A retrieval system over India's labour codes and, more importantly, an honest measurement of whether it actually works. I played along with claude to help with code and then ran multiple iterations chunking strategies aiming to improve the overall recall@4 number**
+**A retrieval system over India's labour codes and, more importantly, an honest measurement of whether it actually works. I played with Claude to help with the code and then ran multiple iterations chunking strategies aiming to improve the overall recall@4 number.**
 
 ```
 Recall@4   63.6%  ──────────────────▶  78.1%
