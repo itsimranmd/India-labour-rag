@@ -17,7 +17,7 @@ In November 2025, India replaced 29 separate labour laws with four consolidated 
 
 Here is the answer to "how much notice do I get before being laid off," as the statute puts it:
 
-> *70. No worker employed in any industry who has been in continuous service for not less than one year under an employer shall be retrenched by that employer until— (a) the worker has been given one month's notice in writing indicating the reasons for retrenchment and the period of notice has expired, or the worker has been paid in lieu of such notice, wages for the period of the notice...*
+> *70. No worker employed in any industry who has been in continuous service for not less than one year under an employer shall be retrenched by that employer until- (a) the worker has been given one month's notice in writing indicating the reasons for retrenchment and the period of notice has expired, or the worker has been paid in lieu of such notice, wages for the period of the notice...*
 
 The answer is in there. It's on page 33 of a 78-page PDF, and you had to know the word "retrenchment" to find it.
 
@@ -27,7 +27,7 @@ The answer is in there. It's on page 33 of a 78-page PDF, and you had to know th
 
 ## Why not just ask ChatGPT?
 
-Because it answers from memory. That memory is unversioned, might be from before these codes existed, might be about a different country entirely, and — the real problem — **you cannot check it.** A confident paragraph about your employment rights with no source is worse than no answer.
+Because it answers from memory. That memory is unversioned, might be from before these codes existed, might be about a different country entirely, and - the real problem - **you cannot check it.** A confident paragraph about your employment rights with no source is worse than no answer.
 
 The fix is retrieval-augmented generation:
 
@@ -51,7 +51,7 @@ The model never sees the corpus. It sees four passages and a question. **Everyth
 
 ---
 
-## Act I — The documents fought back
+## Act I - The documents fought back
 
 | Code | Source | Pages |
 |---|---|---|
@@ -59,7 +59,7 @@ The model never sees the corpus. It sees four passages and a question. **Everyth
 | Code on Social Security, 2020 | labour.gov.in | 118 |
 | Occupational Safety & Health Code, 2020 | dgfasli.gov.in | 86 |
 
-Government portals reorganise, and **four of my first eight URLs returned 404.** The working link for the Social Security Code turned out to be `b0620548445580767b5c0d18c95c26f7.pdf` — a content hash, because the ministry had migrated CMS and renamed every file.
+Government portals reorganise, and **four of my first eight URLs returned 404.** The working link for the Social Security Code turned out to be `b0620548445580767b5c0d18c95c26f7.pdf` - a content hash, because the ministry had migrated CMS and renamed every file.
 
 So the first thing I built was a **quality gate**: four automated checks run against every document before it's allowed into the corpus.
 
@@ -78,7 +78,7 @@ That's why minimum wage and bonus questions fail here. Known, deliberate gap.
 
 ---
 
-## Act II — Building the thing
+## Act II - Building the thing
 
 ### Chunking
 
@@ -86,7 +86,7 @@ That's why minimum wage and bonus questions fail here. Known, deliberate gap.
 
 So: **1,000-character passages, overlapping by 150.**
 
-The overlap is for a reason. A provision sitting on a boundary would be cut in half and lost from both passages. Repeating the tail means it appears whole somewhere — two chances to be found.
+The overlap is for a reason. A provision sitting on a boundary would be cut in half and lost from both passages. Repeating the tail means it appears whole somewhere - two chances to be found.
 
 **Result: 1,104 chunks.**
 
@@ -168,13 +168,13 @@ Read that again. Gold could only ever be something the retriever had already fou
 
 **Fix:** build the candidate pool from *keyword* search first - a method that works on a completely different principle, and can surface passages the embedder never finds. The honest baseline came back at **63.6%**. A worse number and a real one.
 
-### Bug 2 — chunk IDs don't survive re-chunking
+### Bug 2 - chunk IDs don't survive re-chunking
 
 Gold was stored as IDs like `social_security_p26_c2` - *the third 1,000-character window on page 26*. That name only means anything under one chunking scheme. Change the chunking and it points at different text, or nothing at all.
 
 Every new chunking strategy would have scored **0%**, and I'd have concluded they were all terrible.
 
-**Fix — anchor matching.** Store a distinctive 120-character *snippet* from each gold passage, and count a hit when the retrieved text *contains* it.
+**Fix - anchor matching.** Store a distinctive 120-character *snippet* from each gold passage, and count a hit when the retrieved text *contains* it.
 
 > Instead of *"page 26, paragraph 3 of the paperback,"* you say *"the paragraph containing the phrase **one month's notice in writing**."* That works in any edition.
 
@@ -198,7 +198,7 @@ SHIPPED    fixed-size chunking · BGE · hybrid BM25 · dual reranker
 
 | Change | Effect |
 |---|---|
-| **MiniLM to BGE embeddings** | MRR 0.531 to 0.616 — **the single biggest lever** |
+| **MiniLM to BGE embeddings** | MRR 0.531 to 0.616 - **the single biggest lever** |
 | Hybrid BM25 + semantic | medium questions 64% to 71% |
 | Cross-encoder reranking | hard questions 33% to 50% |
 | **Two rerankers, rank-fused** | Recall@4 75% to 81%, MRR to 0.708 |
@@ -212,23 +212,23 @@ More hypotheses died than survived. That's what evaluation looks like when you'r
 
 | Hypothesis | Result |
 |---|---|
-| Section-aware chunking — one chunk per legal provision | **27–58%**, worse in all 6 variants |
-| Smaller section chunks (400 chars) | 27.3% — much worse |
+| Section-aware chunking - one chunk per legal provision | **27–58%**, worse in all 6 variants |
+| Smaller section chunks (400 chars) | 27.3% - much worse |
 | Adding overlap to section chunks | no effect |
 | BGE-**large** instead of BGE-base | worse |
-| Query expansion — rewrite plain English into legal terms | hurt hard questions 50% to 33% |
+| Query expansion - rewrite plain English into legal terms | hurt hard questions 50% to 33% |
 | `bge-reranker` alone | best Recall@10 (87.9%), **worst** Recall@1 (24.2%) |
 | Multi-query retrieval | matched the winner, at higher cost |
 | A third reranker | Recall@4 flat, MRR down |
 | Wider candidate pools (60, 80) | **identical results** |
 
-Section-aware chunking is the one that stings. One chunk per legal provision is *obviously* the right idea. It was consistently worse across six variants, and after testing dilution, chunk size, and missing overlap as explanations — none of which held — I stopped and wrote it down as unexplained. Which is more honest than inventing a tidy story.
+Section-aware chunking is the one that stings. One chunk per legal provision is *obviously* the right idea. It was consistently worse across six variants, and after testing dilution, chunk size, and missing overlap as explanations - none of which held - I stopped and wrote it down as unexplained. Which is more honest than inventing a tidy story.
 
 ### Knowing when to stop
 
 Three independent signals said the ceiling was reached, not that I got bored:
 
-1. Candidate pools of 40, 60 and 80 gave **identical** metrics — the pool was already sufficient
+1. Candidate pools of 40, 60 and 80 gave **identical** metrics - the pool was already sufficient
 2. A third reranker traded Recall@1 for Recall@8 with no net gain
 3. Hard questions sat at **exactly 50% in every single configuration tested**
 
@@ -242,11 +242,11 @@ Five questions never surfaced gold in the top 10 under *any* of 20 configuration
 
 | # | Question | Diagnosis | Action |
 |---|---|---|---|
-| 11 | how long must records be preserved | the codes say *maintain registers* — no retention period exists | reclassified unanswerable |
+| 11 | how long must records be preserved | the codes say *maintain registers* - no retention period exists | reclassified unanswerable |
 | 38 | what if I'm hurt and can't work | gold was the Sixth Schedule: actuarial multipliers, not the entitlement | relabelled |
 | 42 | hired via an agency, am I protected | gold was about licensing authorities, not worker protection | relabelled |
 | 7 | employer PF contribution rate | gold correct, anchor landed awkwardly | added neighbour |
-| 37 | can my boss fire me without warning | **gold correct — retrieval genuinely failed** | **left broken** |
+| 37 | can my boss fire me without warning | **gold correct - retrieval genuinely failed** | **left broken** |
 
 **The distinction that matters:** correcting a wrong label repairs the measuring instrument. Tuning parameters against the same 32 questions until the number looks good is overfitting. Different things, and I've said which one I did.
 
@@ -263,11 +263,11 @@ The canonical failure, still live in the repo:
 ```
 Q: "Can my boss fire me without any warning at all?"
 
-   x [0.454] OSH Code p.35 — "...restricting the area that might be
+   x [0.454] OSH Code p.35 - "...restricting the area that might be
               affected by FIRE or FLOODING in the mine..."
-   x [0.451] OSH Code p.35 — "...isolation of the part of the mine..."
+   x [0.451] OSH Code p.35 - "...isolation of the part of the mine..."
 
-   > Should have been: IR Code p.33, section 70 — one month's notice
+   > Should have been: IR Code p.33, section 70 - one month's notice
 ```
 
 In a general-purpose embedding space, *fire someone* and *fire in a mine* really are close together. Fixing it needs a legal-domain-trained embedder or a proper synonym layer. Both are their own projects.
@@ -280,7 +280,7 @@ In a general-purpose embedding space, *fire someone* and *fire in a mine* really
 - **The answer key is LLM-labelled**, with 4 entries corrected by hand. Not independently verified.
 - **Three of four codes.** No Code on Wages, so minimum wage and bonus questions fail by design.
 - **Difficulty labels: one annotator.** No inter-annotator agreement measured.
-- **Recall is strict** — a neighbouring passage covering the same provision scores as a miss, so real-world usefulness is somewhat higher than the number suggests.
+- **Recall is strict** - a neighbouring passage covering the same provision scores as a miss, so real-world usefulness is somewhat higher than the number suggests.
 - **Not legal advice.** 78% retrieval accuracy is nowhere near good enough to rely on for a decision that affects someone's livelihood.
 
 ---
@@ -298,7 +298,7 @@ python ingest.py        # 1,104 chunks
 python evaluate.py      # Recall@4 78.1%, MRR 0.681
 ```
 
-That test found a real bug — `requirements.txt` had been written with escaped newlines and pip refused to parse it. Which is the point of running it.
+That test found a real bug - `requirements.txt` had been written with escaped newlines and pip refused to parse it. Which is the point of running it.
 
 My working session reported 81.2%. The clean clone reports **78.1%**, a one-question difference from library versions. **The clean-clone number is the one quoted throughout**, because it's the one anyone else will get.
 
@@ -313,7 +313,7 @@ ingest.py            download, strip gazette boilerplate, chunk
 retrieve.py          BGE + BM25 hybrid + dual-reranker ensemble
 answer.py            grounded generation with citations
 evaluate.py          Recall@k, MRR, anchor matching
-eval/questions.json  the answer key — the most valuable file here
+eval/questions.json  the answer key - the most valuable file here
 ```
 
 **Stack:** Python · sentence-transformers · BGE-base-en-v1.5 · rank-bm25 · ChromaDB · OpenAI gpt-4o-mini
